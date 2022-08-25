@@ -1,0 +1,8 @@
+<form action='' method = "POST">
+    <p>name <input type = "text" name = "name" value="{{student.name}}"/></p>
+    <p>Date of Birth <input type = "date" name = "birth_date" value="{{student.birth_date.strftime('%Y-%m-%d')}}"/></p>
+    <p>Place of Birth <input type = "text" name = "birth_place" value="{{student.birth_place}}"/></p>
+    <p>Grade <input type = "number" name = "grade" min="0" max="12" value="{{student.grade}}"/></p>
+    <p>Exam Score Overall <input type = "number" step ="0.1" name = "exam_score" min="0" max="10" value="{{student.exam_score}}"/></p>
+    <p><input type = "submit" value = "Submit" /></p>
+  </form>
