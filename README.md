@@ -1,5 +1,8 @@
 # Flask_API_Student
 
+This repository contains source codes for Flask API backend aims to develop a student management system in the school, making it easier to manage, delete and edit student information.
+
+
 GET /students
 This API will return a JSON string having all the student information
 
