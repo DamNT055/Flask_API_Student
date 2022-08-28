@@ -1,0 +1,50 @@
+[
+    {
+        "student_id": 115,
+        "name": "Nguyen Xuan Thang",
+        "birth_date": "2001-06-05",
+        "birth_place": "Ha Noi",
+        "grade": 12,
+        "exam_score": 5.0
+    },
+    {
+        "student_id": 123,
+        "name": "Nguyen Thanh Dam",
+        "birth_date": "2001-12-05",
+        "birth_place": "Binh Dinh",
+        "grade": 5,
+        "exam_score": 6.5
+    },
+    {
+        "student_id": 126,
+        "name": "Nguyen Thanh Huy",
+        "birth_date": "2001-12-08",
+        "birth_place": "Nha Trang",
+        "grade": 12,
+        "exam_score": 5.0
+    },
+    {
+        "student_id": 152,
+        "name": "Nguyen Manh Hung",
+        "birth_date": "2001-06-05",
+        "birth_place": "Ha Noi",
+        "grade": 12,
+        "exam_score": 5.0
+    },
+    {
+        "student_id": 188,
+        "name": "Nguyen Phi Long",
+        "birth_date": "2001-06-05",
+        "birth_place": "Ha Noi",
+        "grade": 12,
+        "exam_score": 5.0
+    },
+    {
+        "student_id": 833,
+        "name": "Nguyen Khanh Anh",
+        "birth_date": "2001-06-05",
+        "birth_place": "Ha Noi",
+        "grade": 12,
+        "exam_score": 5.0
+    }
+]

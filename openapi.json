@@ -1,0 +1,217 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Flask API - Student CRUD",
+    "description": "This project aims to develop a student management system in the school, making it easier to manage, delete and edit student information.",
+    "contact": {
+      "email": "nguyendam5555@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.11"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:9000/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "student",
+      "description": "Operations about student"
+      }
+  ],
+  "paths": {
+    "/api/students": {
+      "get": {
+        "tags": [
+          "student"
+        ],
+        "summary": "Retrieve all students information",
+        "description": "This API will return a JSON string having all the student information",
+        "operationId": "api_get_students",
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/api/students/{student_id}": {
+      "get": {
+        "tags": [
+          "student"
+        ],
+        "summary": "Get student by student id",
+        "description": "This API will return a JSON string a student information by student_id",
+        "operationId": "getUserByName",
+        "parameters": [
+          {
+            "name": "student_id",
+            "in": "path",
+            "description": "The student_ that needs to be fetched. Use student1 for testing. ",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid student_id supplied"
+          },
+          "404": {
+            "description": "Student not found"
+          }
+        }
+      }
+    },
+    "/api/students/add": {
+      "post": {
+        "tags": [
+          "student"
+        ],
+        "summary": "Create student",
+        "description": "This API would create a student and save student to the student list saved in our storage",
+        "operationId": "createStudent",
+        "requestBody": {
+          "description": "Created user object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Student"
+              }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "student_id duplicated"
+          },
+          "default": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/students/update": {
+      "put": {
+        "tags": [
+          "student"
+        ],
+        "summary": "Update student",
+        "description": "This API allows updating a student",
+        "operationId": "updateStudent",
+        "requestBody": {
+          "description": "Created user object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Student"
+              }
+            }
+          }
+        },
+        "responses": {
+          "404": {
+            "description": "Student not found"
+          },
+          "default": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/students/delete/{student_id}": {
+      "delete": {
+        "tags": [
+          "student"
+        ],
+        "summary": "Delete student",
+        "description": "This API allow to delete a student object",
+        "operationId": "deleteStudent",
+        "parameters": [
+          {
+            "name": "student_id",
+            "in": "path",
+            "description": "The name that needs to be deleted",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid student_id supplied"
+          },
+          "404": {
+            "description": "Student not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Student": {
+        "type": "object",
+        "properties": {
+          "student_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 525
+          },
+          "name": {
+            "type": "string",
+            "example": "Nguyen Phi Long"
+          },
+          "birth_date": {
+            "type": "string",
+            "example": "2001-06-05T00:00:00.000Z"
+          },
+          "birth_place": {
+            "type": "string",
+            "example": "Ha Noi"
+          },
+          "grade": {
+            "type": "integer",
+            "format": "int64",
+            "example": 12
+          },
+          "exam_score": {
+            "type": "number",
+            "format": "float",
+            "example": 5
+          }
+        }
+      }
+    }
+  }
+}
